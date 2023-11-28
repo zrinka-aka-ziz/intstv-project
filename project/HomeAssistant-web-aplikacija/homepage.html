@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HomeAssistant Sensors</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+	<meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+	<header>
+		<h1>Home Assistant Sensors</h1>
+	</header>
+	<div class="grid-container">
+		<div class="grid-item">
+			<h2>Light sensor 0</h2>
+			<p id="sensor.photoresistor0_sensor" class="value-display">loading...</p>
+			<div class="button-container">
+				<button onclick="showHistory('photoresistor0')">HISTORY</button>
+        		</div>
+		</div>
+		<div class="grid-item">
+			<h2>Light sensor 1</h2>
+			<p id="sensor.photoresistor1_sensor" class="value-display">loading...</p>
+			<div class="button-container">
+				<button onclick="showHistory('photoresistor1')">HISTORY</button>
+			</div>
+		</div>
+		<div class="grid-item">
+			<h2>Temperature Sensor</h2>
+			<p id="sensor.temperature_sensor" class="value-display">loading...</p>
+			<div class="button-container">
+				<button onclick="showHistory('temperature')">HISTORY</button>
+			</div>
+		</div>
+		<div class="grid-item">
+			<h2>Humidity Sensor</h2>
+			<p id="sensor.humidity_sensor" class="value-display">loading...</p>
+			<div class="button-container">
+				<button onclick="showHistory('humidity')">HISTORY</button>
+			</div>
+		</div>
+		<div class="grid-item">
+			<h2>Roller blinds</h2>
+			<p id="sensor.servo_sensor" class="value-display">loading...</p>
+			<div class="slider-container">
+				<input type="range" id="servo-slider" min="0" max="100" value="90" onchange="updateSliderValue(this.value)">
+				<span id="slider-value-display">50%</span>
+			</div>
+			<div class="button-container">
+				<button onclick="submitServo()">SUBMIT</button>
+				<button onclick="showHistory('servo')">HISTORY</button>
+			</div>
+		</div>
+        	<div class="grid-item">
+			<h2>Lighting 0</h2>
+			<p id="sensor.led0_sensor" class="value-display">loading...</p>
+			<label class="switch">
+				<input type="checkbox" id="led0-switch" onchange="toggleLED(0)">
+				<span class="slider"></span>
+			</label>
+			<div class="button-container">
+				<button onclick="showHistory('led0')">HISTORY</button>
+			</div>
+		</div>
+		<div class="grid-item">
+			<h2>Lighting 1</h2>
+			<p id="sensor.led1_sensor" class="value-display">loading...</p>
+			<label class="switch">
+				<input type="checkbox" id="led1-switch" onchange="toggleLED(1)">
+				<span class="slider"></span>
+			</label>
+			<div class="button-container">
+				<button onclick="showHistory('led1')">HISTORY</button>
+			</div>
+		</div>
+		<div class="grid-item">
+			<h2>Lighting 2</h2>
+			<p id="sensor.led2_sensor" class="value-display">loading...</p>
+			<label class="switch">
+				<input type="checkbox" id="led2-switch" onchange="toggleLED(2)">
+				<span class="slider"></span>
+			</label>
+			<div class="button-container">
+				<button onclick="showHistory('led2')">HISTORY</button>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>IoTROL.co</p>
+	</footer>
+</div>
+</body>
+</html>
+

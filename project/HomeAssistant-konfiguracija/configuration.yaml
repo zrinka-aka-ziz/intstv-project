@@ -1,0 +1,59 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+http:
+  cors_allowed_origins:
+    - '*'
+
+recorder:
+  db_url: mysql://homeassistant:password@core-mariadb/homeassistant?charset=utf8mb4
+  include:
+    entities:
+      - sensor.photoresistor0_sensor
+      - sensor.photoresistor1_sensor
+      - sensor.temperature_sensor
+      - sensor.humidity_sensor
+      - sensor.servo_sensor
+      - sensor.led0_sensor
+      - sensor.led1_sensor
+      - sensor.led2_sensor
+
+mqtt:
+  sensor:
+    - name: "Photoresistor0 Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.PHOTORESISTOR0 | default(states('sensor.photoresistor0_sensor')) }}"
+    - name: "Photoresistor1 Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.PHOTORESISTOR1 | default(states('sensor.photoresistor1_sensor')) }}"
+    - name: "Temperature Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.TEMPERATURE | default(states('sensor.temperature_sensor')) }}"
+    - name: "Humidity Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.HUMIDITY | default(states('sensor.humidity_sensor')) }}"
+    - name: "Servo Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.SERVO | default(states('sensor.servo_sensor')) }}"
+    - name: "LED0 Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.LED0 | default(states('sensor.led0_sensor')) }}"
+    - name: "LED1 Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.LED1 | default(states('sensor.led1_sensor')) }}"
+    - name: "LED2 Sensor"
+      state_topic: "sensors/data"
+      value_template: "{{ value_json.LED2 | default(states('sensor.led2_sensor')) }}"

@@ -1,0 +1,20 @@
+- id: '1685817791898'
+  alias: HTTP -> MQTT
+  description: HTTP_POST -> MQTT_PUBLISH
+  trigger:
+  - platform: webhook
+    allowed_methods:
+    - POST
+    - PUT
+    local_only: true
+    webhook_id: command
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      qos: 0
+      retain: false
+      topic: homeassistant/commands
+      payload: '{{ trigger.json.message }}'
+  mode: single
+

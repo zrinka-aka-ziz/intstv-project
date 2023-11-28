@@ -1,0 +1,13 @@
+// Instalacija VBox-a na Ubuntu Desktop-u
+sudo apt update
+sudo apt install virtualbox virtualbox-ext-pack
+
+// Slika diska HomeAssistant-a za Linux
+https://www.home-assistant.io/installation/linux/
+https://github.com/home-assistant/operating-system/releases/download/10.2/haos_ova-10.2.vdi.zip
+
+// Otpakiranje paket
+unzip haos_ova-10.2.vdi.zip
+
+// Pokretanje VirtualBox-a
+virtualbox

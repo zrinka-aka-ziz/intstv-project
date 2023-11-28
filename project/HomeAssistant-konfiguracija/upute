@@ -1,0 +1,22 @@
+
+-> pri prvom prvom pokretanju homeassistant-a unijeti sve korisničke podatke, username: username, password: password, ostalo po želji
+
+-> instalirati sljedeće add-on-ove te im namjestiti postavke:
+
+	-> Mosquitto broker addon, pod "konfiguracija" postaviti:
+	
+		-> username: username, password: password
+	
+	-> MariaDB upravitelj bazama podataka, poda konfiguracija uz username: homeassistant postaviti password: password (ne ostaviti null),
+	
+		-> također postaviti i Watchdog na bazu podataka
+		
+		-> ažurirati record značajku u configuration.yaml datoteci
+	
+	-> File Explorer
+	
+		-> postaviti ga u Sidebar
+	
+	-> phpMyAdmin
+	
+		-> postaviti ga u Sidebar
